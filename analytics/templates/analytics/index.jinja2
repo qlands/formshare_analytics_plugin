@@ -1,0 +1,94 @@
+{% extends 'dashboard/page.jinja2' %}
+
+{% block title %}
+    <title>{{ _('FormShare - Analytics') }}</title>
+{% endblock title %}
+
+{% block mainsection %}
+    <div class="wrapper wrapper-content" style="padding: revert">
+        {% include 'analytics/snippets/header.jinja2' %}
+        <div class="row">
+            <div class="col-lg-12">
+                {% if databases == None or query_user == None %}
+                    <div class="middle-box text-center animated fadeInDown">
+                        {% if databases == None %}
+                            <h1><i><img src="{{request.url_for_static('no_repos.svg','analytics')}}" style="height: 256px; width: 256px; opacity: 0.2"></i></h1>
+                            <h3 class="font-bold">{{ _("You don't have a repository yet") }}</h3>
+                            {{ _('Upload a form and create a repository for it') }}
+                        {% else %}
+                            {% if query_user == None %}
+                                <h1><i><img src="{{request.url_for_static('analytics.svg','analytics')}}" style="height: 256px; width: 256px; opacity: 0.2"></i></h1>
+                                <h3 class="font-bold">{{ _("You haven't anabled the analytics module yet") }}</h3>
+                                <div class="error-desc">
+                                    <button type="button" onclick="location.href='{{ request.route_url('enable_analytics',userid=activeUser.login) }}';" class="btn btn-w-m btn-success">{{ _('Enable') }}</button>
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                {% else %}
+                    <div class="tabs-container">
+                        <ul class="nav nav-tabs">
+                            <li><a class="nav-link {% if active_tab == "databases" %}active{% endif %}" data-toggle="tab" href="#databases"><i class="fa fa-database"></i> {{ _('Repositories') }}</a></li>
+                            {% block nav_links_extra %}
+
+                            {% endblock nav_links_extra %}
+                        </ul>
+                        <div class="tab-content">
+                            <div id="databases" class="tab-pane {% if active_tab == "databases" %}active{% endif %}">
+                                <div class="panel-body">
+                                    {% block database_content %}
+                                        <p>
+                                        {{ _('One of the main differences in terms of data management between FormShare
+                                        and the rest of the applications in the market is that FormShare stores your
+                                        submissions as relational data in a relational database. For each ODK form that
+                                        you upload into FormShare, the system creates a database to hold its
+                                        submissions. In FormShare this database is called "repository". In other Apps it is called "schema"') }}
+                                        </p>
+                                        <p>
+                                        {{ _('One of the main advantages of storing data this way is that complex queries
+                                        can be performed on the data from multiple repositories using SQL language.
+                                        Another advantage is that you can performed diverse analytics on your data
+                                        without donwloading it on your computer. You can perform analytics directly on
+                                        the FormShare server which is faster.') }}
+                                        </p>
+                                        <p>
+                                        {{ ('The following table shows the forms that you have access to and the
+                                        repository ID that each form has. You have read-only access to each
+                                        form\'s repository/schema and complete access to your personal repository/schema.
+                                        In you personal repository/schema you can create result tables or views to help you
+                                        analyze your data.') }}
+                                        </p>
+                                        <b>{{ _('Your personal repository/schema is:') }} {{ query_user }}</b>
+                                        <div class="table-responsive">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th>{{ _('Project') }}</th>
+                                                    <th>{{ _('Form') }}</th>
+                                                    <th>{{ _('Repository/Schema') }}</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for a_database in databases %}
+                                                    <tr>
+                                                        <td><a href="{{ request.route_url("project_details",userid=a_database.owner,projcode=a_database.project_code) }}">{{ a_database.project_name }} ({{ a_database.project_code }})</a></td>
+                                                        <td><a href="{{ request.route_url("form_details",userid=a_database.owner,projcode=a_database.project_code,formid=a_database.form_id) }}">{{ a_database.form_name }} ({{ a_database.form_id }})</a></td>
+                                                        <td><a href="{{ request.route_url('editDictTables', userid=a_database.owner, projcode=a_database.project_code, formid=a_database.form_id) }}">{{ a_database.form_schema }}</a></td>
+                                                    </tr>
+                                                {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    {% endblock database_content %}
+                                </div>
+                            </div>
+                            {% block tab_content_extra %}
+
+                            {% endblock tab_content_extra %}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock mainsection %}

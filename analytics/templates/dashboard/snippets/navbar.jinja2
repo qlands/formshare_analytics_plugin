@@ -1,0 +1,8 @@
+{% extend_me %}
+
+{% block user_menu_extra %}
+    {{ super() }}
+    <li {% if activeMenu == 'analytics' %}class="active" {% endif %}>
+        <a href="{{ request.route_url('analytics',userid=activeUser.login) }}"><i><img src="{{request.url_for_static('analytics-white.svg','analytics')}}" style="max-height: 16px; max-width: 16px"></i> <span class="nav-label">{{ _('Analytics') }}</span></a>
+    </li>
+{% endblock user_menu_extra %}
