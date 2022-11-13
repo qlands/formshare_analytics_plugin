@@ -18,7 +18,7 @@
                         {% else %}
                             {% if query_user == None %}
                                 <h1><i><img src="{{request.url_for_static('analytics.svg','analytics')}}" style="height: 256px; width: 256px; opacity: 0.2"></i></h1>
-                                <h3 class="font-bold">{{ _("You haven't anabled the analytics module yet") }}</h3>
+                                <h3 class="font-bold">{{ _("You haven't enabled the analytics module yet") }}</h3>
                                 <div class="error-desc">
                                     <button type="button" onclick="location.href='{{ request.route_url('enable_analytics',userid=activeUser.login) }}';" class="btn btn-w-m btn-success">{{ _('Enable') }}</button>
                                 </div>

@@ -1,0 +1,112 @@
+# Portuguese translations for analytics.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the analytics project.
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+# Carlos Quiros <cquiros@qlands.com>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: analytics 1.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-11-13 11:51-0500\n"
+"PO-Revision-Date: 2022-11-13 12:35-0500\n"
+"Last-Translator: Carlos Quiros <cquiros@qlands.com>\n"
+"Language: pt\n"
+"Language-Team: English <kde-i18n-doc@kde.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: analytics/views.py:83 analytics/views.py:98
+msgid ""
+"An error occurred while activating the analytics module. An email has "
+"been sent to the technical team and they will contact you ASAP."
+msgstr ""
+"Ocorreu um erro durante a ativação do módulo analítico. Um e-mail foi enviado"
+" para a equipe técnica e você será contatado o mais rápido possível."
+
+#: analytics/views.py:114
+msgid "The analytics module has been activated"
+msgstr "O módulo analítico foi ativado"
+
+#: analytics/templates/analytics/index.jinja2:4
+msgid "FormShare - Analytics"
+msgstr "FormShare - Analítica"
+
+#: analytics/templates/analytics/index.jinja2:16
+msgid "You don't have a repository yet"
+msgstr "Você ainda não tem um repositório"
+
+#: analytics/templates/analytics/index.jinja2:17
+msgid "Upload a form and create a repository for it"
+msgstr "Carregar um formulário e criar um repositório para ele"
+
+#: analytics/templates/analytics/index.jinja2:21
+msgid "You haven't enabled the analytics module yet"
+msgstr "Você ainda não ativou o módulo de análise"
+
+#: analytics/templates/analytics/index.jinja2:23
+msgid "Enable"
+msgstr "Ativar"
+
+#: analytics/templates/analytics/index.jinja2:31
+msgid "Repositories"
+msgstr "Repositórios"
+
+#: analytics/templates/analytics/index.jinja2:41
+msgid ""
+"One of the main differences in terms of data management between FormShare"
+" and the rest of the applications in the market is that FormShare stores "
+"your submissions as relational data in a relational database. For each "
+"ODK form that you upload into FormShare, the system creates a database to"
+" hold its submissions. In FormShare this database is called "
+"\"repository\". In other Apps it is called \"schema\""
+msgstr ""
+"Uma das principais diferenças no gerenciamento de dados entre o FormShare e"
+" outras aplicações no mercado é que o FormShare armazena seus envios como"
+" dados relacionais em um banco de dados relacional. Para cada formulário ODK"
+" que você carregar no FormShare, o sistema cria um banco de dados para"
+" armazenar seus envios. No FormShare este banco de dados é chamado de"
+" \"repositório\". Em outras aplicações, é chamado de \"esquema\"."
+
+#: analytics/templates/analytics/index.jinja2:48
+msgid ""
+"One of the main advantages of storing data this way is that complex "
+"queries can be performed on the data from multiple repositories using SQL"
+" language. Another advantage is that you can performed diverse analytics "
+"on your data without donwloading it on your computer. You can perform "
+"analytics directly on the FormShare server which is faster."
+msgstr ""
+"Uma das principais vantagens de armazenar dados desta forma é que você pode"
+" realizar consultas complexas sobre dados de múltiplos repositórios usando a"
+" linguagem SQL. Outra vantagem é que você pode realizar várias análises em"
+" seus dados sem ter que baixá-los para seu computador. Você pode realizar"
+" análises diretamente no servidor FormShare, que é mais rápido."
+
+#: analytics/templates/analytics/index.jinja2:61
+msgid "Your personal repository/schema is:"
+msgstr "Seu repositório/scheme pessoal é"
+
+#: analytics/templates/analytics/index.jinja2:66
+msgid "Project"
+msgstr "Projeto"
+
+#: analytics/templates/analytics/index.jinja2:67
+msgid "Form"
+msgstr "Formulário"
+
+#: analytics/templates/analytics/index.jinja2:68
+msgid "Repository/Schema"
+msgstr "Repositório/Scheme"
+
+#: analytics/templates/analytics/snippets/header.jinja2:7
+#: analytics/templates/dashboard/snippets/navbar.jinja2:6
+msgid "Analytics"
+msgstr "Analítica"
+
+#~ msgid "You haven't anabled the analytics module yet"
+#~ msgstr ""
+

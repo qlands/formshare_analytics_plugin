@@ -1,0 +1,115 @@
+# French translations for analytics.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the analytics project.
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+# Carlos Quiros <cquiros@qlands.com>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: analytics 1.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-11-13 11:51-0500\n"
+"PO-Revision-Date: 2022-11-13 12:27-0500\n"
+"Last-Translator: Carlos Quiros <cquiros@qlands.com>\n"
+"Language: fr\n"
+"Language-Team: English <kde-i18n-doc@kde.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: analytics/views.py:83 analytics/views.py:98
+msgid ""
+"An error occurred while activating the analytics module. An email has "
+"been sent to the technical team and they will contact you ASAP."
+msgstr ""
+"Une erreur s'est produite lors de l'activation du module d'analytique. Un"
+" courriel a été envoyé à l'équipe technique et vous serez contacté dès que"
+" possible."
+
+#: analytics/views.py:114
+msgid "The analytics module has been activated"
+msgstr "Le module analytique a été activé"
+
+#: analytics/templates/analytics/index.jinja2:4
+msgid "FormShare - Analytics"
+msgstr "FormShare - Analytique"
+
+#: analytics/templates/analytics/index.jinja2:16
+msgid "You don't have a repository yet"
+msgstr "Vous ne disposez pas encore d'un référentiel"
+
+#: analytics/templates/analytics/index.jinja2:17
+msgid "Upload a form and create a repository for it"
+msgstr "Télécharger un formulaire et créer un référentiel pour celui-ci"
+
+#: analytics/templates/analytics/index.jinja2:21
+msgid "You haven't enabled the analytics module yet"
+msgstr "Vous n'avez pas encore activé le module d'analytique"
+
+#: analytics/templates/analytics/index.jinja2:23
+msgid "Enable"
+msgstr "Activer"
+
+#: analytics/templates/analytics/index.jinja2:31
+msgid "Repositories"
+msgstr "Référentiels"
+
+#: analytics/templates/analytics/index.jinja2:41
+msgid ""
+"One of the main differences in terms of data management between FormShare"
+" and the rest of the applications in the market is that FormShare stores "
+"your submissions as relational data in a relational database. For each "
+"ODK form that you upload into FormShare, the system creates a database to"
+" hold its submissions. In FormShare this database is called "
+"\"repository\". In other Apps it is called \"schema\""
+msgstr ""
+"Une des principales différences dans la gestion des données entre FormShare"
+" et les autres applications sur le marché est que FormShare stocke vos"
+" soumissions comme des données relationnelles dans une base de données"
+" relationnelle. Pour chaque formulaire ODK que vous téléchargez sur"
+" FormShare, le système crée une base de données pour stocker vos soumissions."
+" Dans FormShare, cette base de données est appelée un \"référentiel\". Dans"
+" d'autres applications, on l'appelle un \"schéma\"."
+
+#: analytics/templates/analytics/index.jinja2:48
+msgid ""
+"One of the main advantages of storing data this way is that complex "
+"queries can be performed on the data from multiple repositories using SQL"
+" language. Another advantage is that you can performed diverse analytics "
+"on your data without donwloading it on your computer. You can perform "
+"analytics directly on the FormShare server which is faster."
+msgstr ""
+"L'un des principaux avantages de ce mode de stockage des données est que vous"
+" pouvez effectuer des requêtes complexes sur des données provenant de"
+" plusieurs référentiels à l'aide du langage SQL. Un autre avantage est que"
+" vous pouvez effectuer diverses analyses sur vos données sans avoir à les"
+" télécharger sur votre ordinateur. Vous pouvez effectuer des analyses"
+" directement sur le serveur FormShare, ce qui est plus rapide."
+
+#: analytics/templates/analytics/index.jinja2:61
+msgid "Your personal repository/schema is:"
+msgstr "Votre référentiel/schéma personnel est"
+
+#: analytics/templates/analytics/index.jinja2:66
+msgid "Project"
+msgstr "Projet"
+
+#: analytics/templates/analytics/index.jinja2:67
+msgid "Form"
+msgstr "Formulaire"
+
+#: analytics/templates/analytics/index.jinja2:68
+msgid "Repository/Schema"
+msgstr "Référentiel/Schéma"
+
+#: analytics/templates/analytics/snippets/header.jinja2:7
+#: analytics/templates/dashboard/snippets/navbar.jinja2:6
+msgid "Analytics"
+msgstr "Analytique"
+
+#~ msgid "You haven't anabled the analytics module yet"
+#~ msgstr ""
+
