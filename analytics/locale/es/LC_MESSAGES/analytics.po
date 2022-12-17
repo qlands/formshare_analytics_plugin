@@ -8,16 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: analytics 1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-12-17 14:24-0500\n"
-"PO-Revision-Date: 2022-11-13 12:28-0500\n"
+"POT-Creation-Date: 2022-12-17 15:38-0500\n"
+"PO-Revision-Date: 2022-12-17 15:45-0500\n"
 "Last-Translator: Carlos Quiros <cquiros@qlands.com>\n"
 "Language: es\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: analytics/views.py:83 analytics/views.py:98
 msgid ""
@@ -73,13 +74,23 @@ msgstr ""
 " datos se llama \"repositorio\". En otras aplicaciones se llama "
 "\"esquema\"."
 
-#: analytics/templates/analytics/index.jinja2:48
+# | msgid "" "One of the main advantages of storing data this way is that
+# | complex " "queries can be performed on the data from multiple repositories
+# | using SQL" " language. Another advantage is that you can performed diverse
+# | analytics " "on your data without donwloading it on your computer. You can
+# | perform " "analytics directly on the FormShare server which is faster."
+#: analytics/templates/analytics/index.jinja2:44
 msgid ""
 "One of the main advantages of storing data this way is that complex "
-"queries can be performed on the data from multiple repositories using SQL"
-" language. Another advantage is that you can performed diverse analytics "
-"on your data without donwloading it on your computer. You can perform "
-"analytics directly on the FormShare server which is faster."
+"queries\n"
+"                                        can be performed on the data from"
+" multiple repositories using SQL language.\n"
+"                                        Another advantage is that you can"
+" performed diverse analytics on your data\n"
+"                                        without donwloading it on your "
+"computer. You can perform analytics directly on\n"
+"                                        the FormShare server which is "
+"faster."
 msgstr ""
 "Una de las principales ventajas de almacenar los datos de esta manera es "
 "que se pueden realizar consultas complejas sobre los datos de múltiples "
@@ -88,19 +99,36 @@ msgstr ""
 "en su computadora. Puede realizar análisis directamente en el servidor de"
 " FormShare, que es más rápido."
 
-#: analytics/templates/analytics/index.jinja2:61
+#: analytics/templates/analytics/index.jinja2:51
+msgid ""
+"The following table shows the forms that you have access to and the\n"
+"                                        repository ID that each form has."
+" You have read-only access to each\n"
+"                                        form's repository/schema and "
+"complete access to your personal repository/schema.\n"
+"                                        In you personal repository/schema"
+" you can create result tables or views to help you\n"
+"                                        analyze your data."
+msgstr ""
+"La siguiente tabla muestra los formularios a los que usted tiene acceso y el"
+" ID de repositorio que tiene cada formulario. Usted tiene acceso de sólo"
+" lectura al repositorio/esquema de cada formulario y acceso completo a su"
+" repositorio/esquema personal. En su repositorio/esquema personal usted puede"
+" crear tablas de resultados o vistas que le ayuden a analizar sus datos."
+
+#: analytics/templates/analytics/index.jinja2:57
 msgid "Your personal repository/schema is:"
 msgstr "Su repositorio/esquema personal es"
 
-#: analytics/templates/analytics/index.jinja2:66
+#: analytics/templates/analytics/index.jinja2:62
 msgid "Project"
 msgstr "Projecto"
 
-#: analytics/templates/analytics/index.jinja2:67
+#: analytics/templates/analytics/index.jinja2:63
 msgid "Form"
 msgstr "Formulario"
 
-#: analytics/templates/analytics/index.jinja2:68
+#: analytics/templates/analytics/index.jinja2:64
 msgid "Repository/Schema"
 msgstr "Repositorio/esquema"
 
