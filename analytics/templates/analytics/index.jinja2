@@ -38,11 +38,7 @@
                                 <div class="panel-body">
                                     {% block database_content %}
                                         <p>
-                                        {{ _('One of the main differences in terms of data management between FormShare
-                                        and the rest of the applications in the market is that FormShare stores your
-                                        submissions as relational data in a relational database. For each ODK form that
-                                        you upload into FormShare, the system creates a database to hold its
-                                        submissions. In FormShare this database is called "repository". In other Apps it is called "schema"') }}
+                                        {{ _('One of the main differences in terms of data management between FormShare and the rest of the applications in the market is that FormShare stores your submissions as relational data in a relational database. For each ODK form that you upload into FormShare, the system creates a database to hold its submissions. In FormShare this database is called "repository". In other Apps it is called "schema"') }}
                                         </p>
                                         <p>
                                         {{ _('One of the main advantages of storing data this way is that complex queries
@@ -52,11 +48,11 @@
                                         the FormShare server which is faster.') }}
                                         </p>
                                         <p>
-                                        {{ ('The following table shows the forms that you have access to and the
+                                        {{ _("The following table shows the forms that you have access to and the
                                         repository ID that each form has. You have read-only access to each
-                                        form\'s repository/schema and complete access to your personal repository/schema.
+                                        form's repository/schema and complete access to your personal repository/schema.
                                         In you personal repository/schema you can create result tables or views to help you
-                                        analyze your data.') }}
+                                        analyze your data.") }}
                                         </p>
                                         <b>{{ _('Your personal repository/schema is:') }} {{ query_user }}</b>
                                         <div class="table-responsive">
