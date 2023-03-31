@@ -315,7 +315,7 @@ class Analytics(plugins.SingletonPlugin):
     def before_editing_project(self, request, user, project, project_details):
         return True, ""
 
-    def after_editing_project(self, request, user, project_data):
+    def after_editing_project(self, request, user, project, project_data):
         pass
 
     def before_deleting_project(self, request, user, project):
