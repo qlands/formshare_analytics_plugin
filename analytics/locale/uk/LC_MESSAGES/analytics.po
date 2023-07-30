@@ -1,0 +1,95 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: Analytics plugin\n"
+"Language: uk\n"
+
+#: analytics/views.py:83 analytics/views.py:98
+msgid "An error occurred while activating the analytics module. An email has been sent to the technical team and they will contact you ASAP."
+msgstr "Під час активації модуля аналітики сталася помилка. Технічній команді надіслано листа, і вони зв'яжуться з вами якнайшвидше."
+
+#: analytics/views.py:114
+msgid "The analytics module has been activated"
+msgstr "Модуль аналітики активовано"
+
+#: analytics/templates/analytics/index.jinja2:4
+msgid "FormShare - Analytics"
+msgstr "FormShare - Аналітика"
+
+#: analytics/templates/analytics/index.jinja2:16
+msgid "You don't have a repository yet"
+msgstr "У вас ще немає репозиторію"
+
+#: analytics/templates/analytics/index.jinja2:17
+msgid "Upload a form and create a repository for it"
+msgstr "Завантажте форму та створіть для неї сховище"
+
+#: analytics/templates/analytics/index.jinja2:21
+msgid "You haven't enabled the analytics module yet"
+msgstr "Ви ще не ввімкнули модуль аналітики"
+
+#: analytics/templates/analytics/index.jinja2:23
+msgid "Enable"
+msgstr "Увімкнути"
+
+#: analytics/templates/analytics/index.jinja2:31
+msgid "Repositories"
+msgstr "Сховища"
+
+#: analytics/templates/analytics/index.jinja2:41
+msgid "One of the main differences in terms of data management between FormShare and the rest of the applications in the market is that FormShare stores your submissions as relational data in a relational database. For each ODK form that you upload into FormShare, the system creates a database to hold its submissions. In FormShare this database is called \"repository\". In other Apps it is called \"schema\""
+msgstr "Одна з головних відмінностей в управлінні даними між FormShare та іншими додатками на ринку полягає в тому, що FormShare зберігає ваші заявки як реляційні дані в реляційній базі даних. Для кожної ODK-форми, яку ви завантажуєте у FormShare, система створює базу даних для її зберігання. У FormShare ця база даних називається \"сховище\". В інших додатках вона називається \"схема\""
+
+#. | msgid "" "One of the main advantages of storing data this way is that
+#. | complex " "queries can be performed on the data from multiple repositories
+#. | using SQL" " language. Another advantage is that you can performed diverse
+#. | analytics " "on your data without donwloading it on your computer. You can
+#. | perform " "analytics directly on the FormShare server which is faster."
+#: analytics/templates/analytics/index.jinja2:44
+msgid "One of the main advantages of storing data this way is that complex queries\n"
+"                                        can be performed on the data from multiple repositories using SQL language.\n"
+"                                        Another advantage is that you can performed diverse analytics on your data\n"
+"                                        without donwloading it on your computer. You can perform analytics directly on\n"
+"                                        the FormShare server which is faster."
+msgstr "Однією з головних переваг зберігання даних у такий спосіб є те, що складні запити\n"
+"                                        можна виконувати складні запити до даних з декількох сховищ, використовуючи мову SQL.\n"
+"                                        Інша перевага полягає в тому, що ви можете виконувати різноманітну аналітику ваших даних\n"
+"                                        не завантажуючи їх на свій комп'ютер. Ви можете виконувати аналітику безпосередньо на\n"
+"                                        сервері FormShare, що є швидшим."
+
+#: analytics/templates/analytics/index.jinja2:51
+msgid "The following table shows the forms that you have access to and the\n"
+"                                        repository ID that each form has. You have read-only access to each\n"
+"                                        form's repository/schema and complete access to your personal repository/schema.\n"
+"                                        In you personal repository/schema you can create result tables or views to help you\n"
+"                                        analyze your data."
+msgstr "У наступній таблиці показано форми, до яких ви маєте доступ, а також\n"
+"                                        ідентифікатор сховища, який має кожна форма. Ви маєте доступ лише для читання до кожного\n"
+"                                        сховища/схеми кожної форми і повний доступ до вашого особистого сховища/схеми.\n"
+"                                        У вашому персональному сховищі/схемі ви можете створювати таблиці результатів або подання, які допоможуть вам\n"
+"                                        аналізувати ваші дані."
+
+#: analytics/templates/analytics/index.jinja2:57
+msgid "Your personal repository/schema is:"
+msgstr "Ваш особистий репозиторій/схема:"
+
+#: analytics/templates/analytics/index.jinja2:62
+msgid "Project"
+msgstr "Проект"
+
+#: analytics/templates/analytics/index.jinja2:63
+msgid "Form"
+msgstr "Форма"
+
+#: analytics/templates/analytics/index.jinja2:64
+msgid "Repository/Schema"
+msgstr "Репозиторій/схема"
+
+#: analytics/templates/analytics/snippets/header.jinja2:7
+#: analytics/templates/dashboard/snippets/navbar.jinja2:6
+msgid "Analytics"
+msgstr "Аналітика"
+
