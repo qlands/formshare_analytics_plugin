@@ -8,6 +8,7 @@ from sqlalchemy.pool import NullPool
 import formshare.plugins.utilities as u
 from formshare.processes.db import is_user_active, get_query_user, get_user_databases
 from analytics.views import AnalyticsView, EnableAnalyticsView
+from formshare.processes.db.utility import get_db_connection
 
 log = logging.getLogger("formshare")
 
@@ -174,13 +175,15 @@ class Analytics(plugins.SingletonPlugin):
         if query_user is not None:
             user_databases = get_user_databases(request, collaborator_id)
             try:
+                connection = get_db_connection(request)
                 for a_database in user_databases:
-                    request.dbsession.execute(
+                    connection.connection.execute(
                         "GRANT SELECT ON {}.* TO '{}'@'%'".format(
                             a_database["form_schema"], query_user
                         )
                     )
-                request.dbsession.execute("flush privileges")
+                connection.connection.execute("flush privileges")
+                connection.disconnect()
             except Exception as e:
                 error_message = (
                     "Error while enabling database access to: {}\n"
@@ -205,22 +208,24 @@ class Analytics(plugins.SingletonPlugin):
         if query_user is not None:
             user_databases = get_user_databases(request, collaborator_id)
             try:
-                request.dbsession.execute(
+                connection = get_db_connection(request)
+                connection.connection.execute(
                     "REVOKE ALL PRIVILEGES,GRANT OPTION FROM '{}'@'%'".format(
                         query_user
                     )
                 )
-                request.dbsession.execute("flush privileges")
-                request.dbsession.execute(
+                connection.connection.execute("flush privileges")
+                connection.connection.execute(
                     "GRANT ALL ON {}.* TO '{}'@'%'".format(query_user, query_user)
                 )
                 for a_database in user_databases:
-                    request.dbsession.execute(
+                    connection.connection.execute(
                         "GRANT SELECT ON {}.* TO '{}'@'%'".format(
                             a_database["form_schema"], query_user
                         )
                     )
-                request.dbsession.execute("flush privileges")
+                connection.connection.execute("flush privileges")
+                connection.disconnect()
             except Exception as e:
                 error_message = (
                     "Error while changing database access to: {}\n "
@@ -278,19 +283,21 @@ class Analytics(plugins.SingletonPlugin):
     ):
         if form_data["form_schema"] is not None:
             try:
-                users = request.dbsession.execute(
+                connection = get_db_connection(request)
+                users = connection.connection.execute(
                     "SELECT user FROM mysql.db WHERE db = '{}'".format(
                         form_data["form_schema"]
                     )
                 ).fetchall()
                 if users is not None:
                     for a_user in users:
-                        request.dbsession.execute(
+                        connection.connection.execute(
                             "REVOKE SELECT ON {}.* FROM '{}'@'%'".format(
                                 form_data["form_schema"], a_user[0]
                             )
                         )
-                    request.dbsession.execute("flush privileges")
+                    connection.connection.execute("flush privileges")
+                connection.disconnect()
             except Exception as e:
                 error_message = (
                     "Error while revoking all access from database: {} Due to deletion of form {}\n "
@@ -325,19 +332,21 @@ class Analytics(plugins.SingletonPlugin):
         for a_form in project_forms:
             if a_form["form_schema"] is not None:
                 try:
-                    users = request.dbsession.execute(
+                    connection = get_db_connection(request)
+                    users = connection.connection.execute(
                         "SELECT user FROM mysql.db WHERE db = '{}'".format(
                             a_form["form_schema"]
                         )
                     ).fetchall()
                     if users is not None:
                         for a_user in users:
-                            request.dbsession.execute(
+                            connection.connection.execute(
                                 "REVOKE SELECT ON {}.* FROM '{}'@'%'".format(
                                     a_form["form_schema"], a_user[0]
                                 )
                             )
-                        request.dbsession.execute("flush privileges")
+                        connection.connection.execute("flush privileges")
+                    connection.disconnect()
                 except Exception as e:
                     error_message = (
                         "Error while revoking all access from database: {} Due to deletion of form {}\n "

@@ -10,6 +10,7 @@ from formshare.processes.db import (
 import uuid
 from formshare.config.encdecdata import encode_data
 from formshare.processes.email.send_email import send_error_to_technical_team
+from formshare.processes.db.utility import get_db_connection
 
 
 class AnalyticsView(FormSharePrivateView):
@@ -57,21 +58,23 @@ class EnableAnalyticsView(FormSharePrivateView):
             )
             if updated:
                 try:
-                    self.request.dbsession.execute(
+                    connection = get_db_connection(self.request)
+                    connection.connection.execute(
                         "CREATE USER '{}'@'%' IDENTIFIED BY '{}'".format(
                             query_user, query_password
                         )
                     )
-                    self.request.dbsession.execute("CREATE SCHEMA " + query_user)
-                    self.request.dbsession.execute(
+                    connection.connection.execute("CREATE SCHEMA " + query_user)
+                    connection.connection.execute(
                         "GRANT ALL ON {}.* TO '{}'@'%'".format(query_user, query_user)
                     )
                     for a_database in user_databases:
-                        self.request.dbsession.execute(
+                        connection.connection.execute(
                             "GRANT SELECT ON {}.* TO '{}'@'%'".format(
                                 a_database["form_schema"], query_user
                             )
                         )
+                    connection.disconnect()
                 except Exception as e:
                     send_error_to_technical_team(
                         self.request,
